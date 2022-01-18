@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 var passport = require("passport");
 var session = require("express-session");
 var flash = require("connect-flash");
-var params = require("./params/params");
+//var params = require("./params/params");
 //require("dotenv").config({ path: "./config.env" });
 
 var setUpPassport = require("./setuppassport");
@@ -16,7 +16,7 @@ var app = express();
 mongoose.connect(process.env.DATABASECONNECTION, {useUnifiedTopology:true, useNewUrlParser:true, useCreateIndex:true});
 setUpPassport();
 
-app.set("port", process.env.PORT);
+app.set("port", process.env.PORT || 3005);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:false}));
