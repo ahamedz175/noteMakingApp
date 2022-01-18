@@ -13,7 +13,7 @@ var setUpPassport = require("./setuppassport");
 //var routes = require("./routes");
 
 var app = express();
-mongoose.connect(process.env.DATABASECONNECTION, {useUnifiedTopology:true, useNewUrlParser:true, useCreateIndex:true});
+mongoose.connect("mongodb+srv://Ahamed123:newpassword123@cluster0.viq3i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useUnifiedTopology:true, useNewUrlParser:true, useCreateIndex:true});
 setUpPassport();
 
 app.set("port", process.env.PORT || 3005);
