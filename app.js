@@ -13,7 +13,14 @@ var setUpPassport = require("./setuppassport");
 //var routes = require("./routes");
 
 var app = express();
-mongoose.connect(process.env.DATABASECONNECTION, {useUnifiedTopology:true, useNewUrlParser:true});//, useCreateIndex:true});
+try{
+await mongoose.connect(process.env.DATABASECONNECTION, {useUnifiedTopology:true, useNewUrlParser:true});//, useCreateIndex:true});
+}
+catch(err)
+{
+	console.log("server went wrong");
+}
+
 setUpPassport();
 
 app.set("port", process.env.PORT || 3005);
