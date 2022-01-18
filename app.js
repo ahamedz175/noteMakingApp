@@ -13,6 +13,7 @@ var setUpPassport = require("./setuppassport");
 //var routes = require("./routes");
 
 var app = express();
+const connectDB = async () => {
 try{
 await mongoose.connect(process.env.DATABASECONNECTION, {useUnifiedTopology:true, useNewUrlParser:true});//, useCreateIndex:true});
 }
@@ -20,6 +21,9 @@ catch(err)
 {
 	console.log("server went wrong");
 }
+};
+
+connectDB();
 
 setUpPassport();
 
