@@ -49,7 +49,7 @@ router.get("/edit/:postId", function(req,res){
     });
 });
 
-router.get("/delete/:postId", async function(req, res){
+router.delete("/delete/:postId", async function(req, res){
 	Post.findOneAndRemove(req.params.postId).exec(function(err, posts){
         if(err){console.log(err);}
 

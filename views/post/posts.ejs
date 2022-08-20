@@ -1,4 +1,4 @@
-<%- include('../_partial/_header'); -%>
+<a%- include('../_partial/_header'); -%>
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
@@ -25,7 +25,15 @@
                 <p><%= post.content %></p>
                 <p><a href="posts/<%= post._id %>" class="btn btn-primary" role="button">Read</a> 
 		<a href="posts/edit/<%= post._id %>" class="btn btn-primary" role="button">Edit</a>
-		<a href="posts/delete/<%= post._id %>" class="btn btn-primary" role="button"> Delete</a> 
+		
+		<form action="posts/delete/<%= post._id %>" method="POST">
+			<div class="form-group">
+                		<button type="submit" class="btn btn-primary" href="#" role="button">Delete</button>
+		        </div>
+
+		</form>
+
+
 			</p>
             </div>
         </div>
