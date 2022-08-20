@@ -53,7 +53,7 @@ router.delete("/delete/:postId", async function(req, res){
 	Post.findOneAndRemove(req.params.postId).exec(function(err, posts){
         if(err){console.log(err);}
 
-        res.render("/posts/");});});
+        res.render("/posts/",{post:post});});});
 	
 
 
