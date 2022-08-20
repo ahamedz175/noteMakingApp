@@ -50,11 +50,14 @@ router.get("/edit/:postId", function(req,res){
 });
 
 router.get("/delete/:postId", function(req, res){
-	Post.findOneAndRemove(req.params.postId);
+	Post.findOneAndRemove(req.params.postId).exec(function(err, post){
+		res.redirect("/posts");
+		
+
+	}));
 	
 
 
-	});
 
 router.post("/update", async function(req, res){
      const post = await Post.findById(req.body.postid);
