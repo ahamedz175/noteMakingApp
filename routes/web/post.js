@@ -35,7 +35,6 @@ router.get("/", function(req, res){
     });
 
  });
-
  //: means a route parameter it could be anything and it's often an ID
  // localhost:3000/posts/12345 --> fetch the post with id 12345
 router.get("/:postId", function(req,res){
@@ -51,7 +50,7 @@ router.get("/edit/:postId", function(req,res){
 });
 
 router.get("/delete/:postId", function(req, res){
-	Post.findOneAndRemove({userId: req.params.postID}, function(err, Post)
+	Post.findOneAndRemove(req.params._id, function(err, Post)
 	{ res.redirect("/posts");
 	if(err){console.log(err);}
 	
