@@ -51,7 +51,7 @@ router.get("/edit/:postId", function(req,res){
 
 router.get("/delete/:postId", function(req, res){
 	Post.findOneAndRemove(req.params.postId).exec(function(err, Post)
-	{ res.redirect("/posts");});
+	{ res.render("/posts");});
 	
 
 
