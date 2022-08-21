@@ -50,6 +50,7 @@ router.get("/edit/:postId", function(req,res){
 });
 
 router.post("/delete/:postId", async function(req, res){
+	console.log("postId: ",req.params.postId);
 	Post.findOneAndRemove(req.params.postId).exec(function(err, posts){
         if(err){console.log(err);}
 
